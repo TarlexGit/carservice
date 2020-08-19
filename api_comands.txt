@@ -1,0 +1,52 @@
+Создание юзера 
+http://0.0.0.0:8000/api/users/
+
+{   "email": "userone@userone.ru"
+    "username": "userone",
+    "password": "useroneuserone"
+}
+
+Забираем токен
+http://localhost:8000/api/token/
+
+{
+    "username": "userone",
+    "password": "useroneuserone"
+}
+
+Здесь и далее в Headers пишем (вместо *** access токен) : 
+Key Authorization 
+Value JWT ***
+
+В админке суперюзер создает мастеров.
+
+Список мастеров http://127.0.0.1:8000/masters/
+
+Зпись юзера на прием
+http://127.0.0.1:8000/user/signup
+
+поля
+start_date      2020-08-19
+start_time      18:01:00
+master          1
+
+Список существующих записей
+http://127.0.0.1:8000/record_list/
+
+Дает такой выход - время начала записи и конечное время
+{
+    "16:00:00": "17:00:00",
+    "17:01:00": "18:01:00",
+    "19:00:00": "20:00:00",
+    "14:10:00": "15:10:00"
+}
+
+Пут запрос на смену данных пофайла юзера 
+http://127.0.0.1:8000/api/users/profile/detail/7/
+вводим одно из или все:
+{ 
+    "last_name": "usertwoF",
+    "first_name": "usertwoN",
+    "father_name": "usertwoFN",
+    "car_mark": "Tesla" 
+}
